@@ -16,7 +16,7 @@ describe('Test a client object', function () {
             var client = Object.create(Client);
             client.init({name: 'Ali'})
             client.deposit({amount: 1000});
-            var result = client.amount.balance;
+            var result = client.account.balance;
             var expected = 1000;
             assert.equal(result, expected);
 
@@ -46,7 +46,7 @@ describe('Test a client object', function () {
             client.init({name: 'Ali'});
             client.deposit({amount: 500});
             client.withdrawal({amount: 100});
-            var result = client.amount.balance;
+            var result = client.account.balance;
             var expected = 400;
             assert.equal(result, expected);
         })
@@ -77,7 +77,7 @@ describe('Test a client object', function () {
             receiverClient.init({name: 'Lucky Man'});
             client.deposit({amount: 500});
             client.transfer({client: receiverClient, amount: 100});
-            var result = receiverClient.amount.balance;
+            var result = receiverClient.account.balance;
             var expected = 100;
             assert.equal(result, expected);
 
@@ -87,7 +87,7 @@ describe('Test a client object', function () {
             receiverClient.init({name: 'Lucky Man'});
             client.deposit({amount: 500});
             client.transfer({client: receiverClient, amount: 100});
-            var result = client.amount.balance;
+            var result = client.account.balance;
             var expected = 400;
             assert.equal(result, expected);
 

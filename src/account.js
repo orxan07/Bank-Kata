@@ -1,6 +1,6 @@
 'use strict'
 
-var Amount = {
+var Account = {
     init: function (args) {
         args = args || {};
         //problem with naming. m.b. better choice is 'number'?
@@ -8,12 +8,14 @@ var Amount = {
 
         return this;
     },
-    add: function (amount) {
+    add: function (args) {
+        var amount = args.amount || 0;
         this.balance += amount;
     },
-    subtract: function (amount) {
+    subtract: function (args) {
+        var amount = args.amount || 0;
         this.balance -= amount;
     },
 };
 
-module.exports = Amount;
+module.exports = Account;

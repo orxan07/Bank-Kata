@@ -8,7 +8,7 @@ var Human = {
     //Is this naming understandable?
     set: function (args) {
         args = args || {};
-        var name = args.name;
+        var name = args.name||Const.EMPTY;
         assert.ok(typeof  name === 'string',name !== Const.EMPTY,'Wrong input!');
         this.name = name;
 
