@@ -5,6 +5,7 @@ var Const = require('./const');
 
 var Human = {
     name:'',
+    //Is this naming understandable?
     set: function (args) {
         args = args || {};
         var name = args.name;
