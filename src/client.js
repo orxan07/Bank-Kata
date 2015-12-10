@@ -18,6 +18,7 @@ Client.deposit = function (args) {
     var amount = args.amount || args,//is it good practice?
         balance = this.amount.balance;
     assert.ok(typeof amount === 'number' && amount > 0, 'Wrong input!');
+    
     this.amount.add(amount);
     this.history.add({credit: amount, balance: balance});
 };
@@ -26,6 +27,7 @@ Client.withdrawal = function (args) {
     var amount = args.amount || args,//is it good practice?
         balance = this.amount.balance;
     assert.ok(typeof amount === 'number' && amount > 0 && amount <= balance, 'Wrong input!');
+    
     this.amount.subtract(amount);
     this.history.add({debit: amount, balance: balance});
 };
