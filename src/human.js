@@ -6,7 +6,7 @@ var Const = require('./const');
 var Human = {
     name:'',
     //Is this naming understandable?
-    set: function (args) {
+    initHuman: function (args) {
         args = args || {};
         var name = args.name||Const.EMPTY;
         assert.ok(typeof  name === 'string',name !== Const.EMPTY,'Wrong input!');
