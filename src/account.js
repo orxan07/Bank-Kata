@@ -19,6 +19,7 @@ var Account = {
     deposit: function (args) {
         args = args || {};
         var amount = args.amount || 0;
+        
         assert.ok(typeof amount === 'number' && amount > 0, 'Wrong input!');
         this.balance += amount;
         var transaction = Object.create(Transaction).init({
@@ -31,6 +32,7 @@ var Account = {
     withdrawal: function (args) {
         args = args || {};
         var amount = args.amount || 0;
+        
         assert.ok(typeof amount === 'number' && amount > 0 && amount <= this.balance, 'Wrong input!');
         this.balance -= amount;
         var transaction = Object.create(Transaction).init({
@@ -45,6 +47,7 @@ var Account = {
         var client = args.client,
             sentAmount = args.amount,
             clientAmount = client.getAccount({number: args.number});
+            
         assert.ok(typeof sentAmount === 'number' && sentAmount > 0 && sentAmount <= this.balance
             && typeof client === typeof Client, 'Wrong input!');
         clientAmount.balance += sentAmount;
